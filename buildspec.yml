@@ -3,27 +3,58 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "==== Installing prerequisites (if any) ===="
+      - echo "==== Installing dependencies (if any) ===="
   pre_build:
     commands:
-      - echo "==== Pre-Build phase started ===="
-      - echo "Creating build directory..."
+      - echo "==== Pre-build phase started ===="
       - mkdir -p build
   build:
     commands:
-      - echo "==== Build started on date ===="
-      - echo "<!DOCTYPE html>" > build/index.html
-      - echo "<html lang='en'>" >> build/index.html
-      - echo "<head><meta charset='UTF-8'><title>Pipeline Test</title></head>" >> build/index.html
-      - echo "<body style='font-family: sans-serif; background-color: #f9f9f9; text-align: center; margin-top: 100px;'>" >> build/index.html
-      - echo "<h1 style='color: green;'>🚀 AWS CodePipeline Deployed This Page</h1>" >> build/index.html
-      - echo "<p>Build completed on: $(date)</p>" >> build/index.html
-      - echo "</body></html>" >> build/index.html
+      - echo "==== Build phase started ===="
+      - |
+        cat <<EOF > build/index.html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>About Page</title>
+          <style>
+            body {
+              font-family: Arial, sans-serif;
+              background-color: #f0f0f0;
+              margin: 0;
+              padding: 0;
+              text-align: center;
+            }
+            .container {
+              margin-top: 100px;
+            }
+            h1 {
+              color: #2c3e50;
+            }
+            p {
+              font-size: 18px;
+              color: #555;
+              margin: 10px 0;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>About This Website</h1>
+            <p>This static site is deployed using AWS CodePipeline, CodeBuild, and S3.</p>
+            <p>Created by Himanshu Nimje 🚀</p>
+            <p>Build time: $(date)</p>
+          </div>
+        </body>
+        </html>
+        EOF
   post_build:
     commands:
-      - echo "==== Build completed ===="
+      - echo "==== Build complete. Files are ready to deploy. ===="
 
 artifacts:
   files:
-    - '*/'
+    - '**/*'
   base-directory: build
