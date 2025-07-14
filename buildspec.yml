@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "==== Installing prerequisites (if any) ===="
+  pre_build:
+    commands:
+      - echo "==== Pre-Build phase started ===="
+      - echo "Creating build directory..."
+      - mkdir -p build
+  build:
+    commands:
+      - echo "==== Build started on date ===="
+      - echo "<!DOCTYPE html>" > build/index.html
+      - echo "<html lang='en'>" >> build/index.html
+      - echo "<head><meta charset='UTF-8'><title>Pipeline Test</title></head>" >> build/index.html
+      - echo "<body style='font-family: sans-serif; background-color: #f9f9f9; text-align: center; margin-top: 100px;'>" >> build/index.html
+      - echo "<h1 style='color: green;'>🚀 AWS CodePipeline Deployed This Page</h1>" >> build/index.html
+      - echo "<p>Build completed on: $(date)</p>" >> build/index.html
+      - echo "</body></html>" >> build/index.html
+  post_build:
+    commands:
+      - echo "==== Build completed ===="
+
+artifacts:
+  files:
+    - '*/'
+  base-directory: build
