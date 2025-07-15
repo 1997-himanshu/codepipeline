@@ -19,12 +19,13 @@ body {
 }
 
 .content {
-  backdrop-filter: blur(4px); /* transparent */
+  backdrop-filter: blur(4px); /* background blur */
   background-color: rgba(0, 0, 0, 0.4); /* transparent */
   padding: 2rem;
   border-radius: 10px;
   max-width: 600px;
   width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* optional for glow effect */
 }
 
 h1 {
