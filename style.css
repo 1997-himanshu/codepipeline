@@ -1,88 +1,92 @@
-/* Reset + font */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('aws.png') no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
-  color: skyblue;
+  color: #fff;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 20px;
-  overflow-x: hidden;
+  padding: 1rem;
 }
 
-/* AWS logo */
-.aws-logo {
-  width: 100px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-}
-
-/* Content Box */
-.container {
-  max-width: 800px;
-  width: 100%;
-  padding: 40px 20px;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
-  backdrop-filter: blur(4px);
+.content {
+  backdrop-filter: blur(2px);
 }
 
 h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
+
 h1 span {
-  color: white;
+  color: #00ccff;
 }
 
 h2 {
-  font-size: 1.6rem;
-  color: orange;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ff9900;
+  margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #e0e0e0;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
-/* Social Links */
-.social-links {
+.links {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
-.social-links a {
+
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 10px 16px;
-  border: 2px solid skyblue;
   border-radius: 8px;
-  color: skyblue;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.social-links a:hover {
-  background-color: skyblue;
-  color: black;
+  color: #00ccff;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.2rem; }
-  p  { font-size: 1rem; }
-  .aws-logo { width: 80px; top: 10px; left: 10px; }
-  .container { padding: 20px; }
+.links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.links img {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%);
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .links {
+    flex-direction: column;
+  }
 }
