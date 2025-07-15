@@ -19,7 +19,7 @@ body {
 }
 
 .content {
-  backdrop-filter: blur(6px); /* smoother background blur */
+  backdrop-filter: blur(6px); /* full transparent */
   background-color: rgba(0, 0, 0, 0.3); /* more transparent */
   padding: 2rem;
   border-radius: 12px;
