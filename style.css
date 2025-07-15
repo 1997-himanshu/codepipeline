@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('aws-bg.jpg'); /* aws.png */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* light colour */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  max-width: 700px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header h2 {
+  font-size: 36px;
+  color: #ffd700;
+  margin-bottom: 30px;
+}
+
+.header span {
+  font-weight: bold;
+}
+
+.about {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.about h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.icons a {
+  font-size: 26px;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icons a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .header h2 {
+    font-size: 26px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+  .icons a {
+    font-size: 22px;
+  }
+}
