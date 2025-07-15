@@ -7,8 +7,8 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('aws.png') no-repeat center center fixed;
-  background-size: contain; /* changed from 'cover' to 'contain' based on image size */
-  background-color: #001f3f; /* fallback color matching AWS theme */
+  background-size: cover;
+  background-color: #001f3f;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -19,12 +19,13 @@ body {
 }
 
 .content {
-  backdrop-filter: blur(4px); /* slightly stronger blur for better text readability */
-  background-color: rgba(0, 0, 0, 0.4); /* subtle background for contrast */
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4); /* transparent box */
   padding: 2rem;
   border-radius: 10px;
   max-width: 600px;
   width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
