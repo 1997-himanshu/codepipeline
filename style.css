@@ -6,37 +6,45 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #00457c, #1a75d1);
+  background-image: url('aws-bg.png'); /* aws.png */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: #fff;
   text-align: center;
-  padding: 20px;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
+.container {
+  backdrop-filter: brightness(0.9);
+  padding: 30px 20px;
 }
 
+/* Header */
 .header h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 28px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
 .header h2 {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 20px;
 }
 
 .header span {
   color: #ffd700;
+  font-weight: bold;
 }
 
+/* About */
 .about {
-  margin: 30px auto;
-  max-width: 600px;
-  padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
   border-radius: 12px;
 }
 
@@ -49,37 +57,60 @@ body {
   font-size: 16px;
 }
 
-.social {
-  margin-top: 30px;
+/* Icons */
+.icons {
+  margin-top: 25px;
 }
 
-.social a {
+.icons a {
+  font-size: 26px;
   color: #fff;
-  font-size: 24px;
   margin: 0 15px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s, color 0.3s;
 }
 
-.social a:hover {
+.icons a:hover {
   color: #ffd700;
   transform: scale(1.2);
 }
 
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.fade-in:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .logo {
-    width: 80px;
+  .header h1 {
+    font-size: 20px;
   }
 
-  .header h1, .header h2 {
-    font-size: 20px;
+  .header h2 {
+    font-size: 24px;
   }
 
   .about p {
     font-size: 14px;
   }
 
-  .social a {
-    font-size: 20px;
+  .icons a {
+    font-size: 22px;
     margin: 0 10px;
   }
 }
