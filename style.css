@@ -1,13 +1,85 @@
-body {
-  background-image: url('aws.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #00457c, #1a75d1);
+  color: #fff;
   text-align: center;
-  padding-top: 20%;
-  backdrop-filter: brightness(0.9);
+  padding: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.header span {
+  color: #ffd700;
+}
+
+.about {
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.about h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 16px;
+}
+
+.social {
+  margin-top: 30px;
+}
+
+.social a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+.social a:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 80px;
+  }
+
+  .header h1, .header h2 {
+    font-size: 20px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
+  .social a {
+    font-size: 20px;
+    margin: 0 10px;
+  }
 }
