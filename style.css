@@ -18,8 +18,9 @@ body {
 }
 
 .container {
-  backdrop-filter: brightness(0.9);
-  padding: 30px 20px;
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.5);  /* ✅ Transparent dark overlay for readability */
+  min-height: 100vh;
 }
 
 /* Header */
@@ -27,15 +28,16 @@ body {
   font-size: 28px;
   margin-bottom: 8px;
   letter-spacing: 1px;
+  color: #ffffff;
 }
 
 .header h2 {
   font-size: 32px;
   margin-bottom: 20px;
+  color: #ffd700;
 }
 
 .header span {
-  color: #ffd700;
   font-weight: bold;
 }
 
@@ -51,10 +53,12 @@ body {
 .about h3 {
   font-size: 22px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .about p {
   font-size: 16px;
+  color: #fff;
 }
 
 /* Icons */
@@ -74,7 +78,7 @@ body {
   transform: scale(1.2);
 }
 
-/* Animations */
+/* Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
