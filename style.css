@@ -5,27 +5,38 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('aws.png') no-repeat center center fixed;
-  background-size: contain; /* changed from 'cover' to 'contain' based on image size */
-  background-color: #001f3f; /* fallback color matching AWS theme */
-  color: #fff;
-  min-height: 100vh;
+  background-color: #001f3f; /* fallback color */
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 1rem;
+  text-align: center;
+}
+
+.background-wrapper {
+  width: 1152px;
+  height: 768px;
+  background: url('aws.png') no-repeat center center;
+  background-size: 1152px 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+  position: relative;
 }
 
 .content {
-  backdrop-filter: blur(4px); /* background blur */
-  background-color: rgba(0, 0, 0, 0.4); /* transparent */
-  padding: 2rem;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 2rem 3rem;
+  border-radius: 12px;
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* optional for glow effect */
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -78,6 +89,16 @@ p {
   width: 20px;
   height: 20px;
   filter: invert(100%);
+}
+
+@media screen and (max-width: 1200px) {
+  .background-wrapper {
+    width: 90vw;
+    height: auto;
+  }
+  .content {
+    padding: 1.5rem 2rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
